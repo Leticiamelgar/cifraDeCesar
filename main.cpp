@@ -45,7 +45,10 @@ void criptoanaliseFrequencia (const std::string& textoCifrado){
             indiceMaisFrequente = i;
         }
     }
-    cout << "A letra mais frequente nesse texto é: " << indiceMaisFrequente << endl;
+    
+    const int indiceE = 4;
+    int chaveProvavel = (indiceMaisFrequente - indiceE + 26) % 26;
+    cout << "A letra mais frequente nesse texto é: " << char ('a' + indiceMaisFrequente) << endl;
     
 }
 
@@ -61,5 +64,5 @@ int main (){
     std::string mensagemCriptografada = criptografarCesar(mensagem,chave);
     std::cout << "Mensagem Criptografada: " << mensagemCriptografada << endl;
 
-    
+    criptoanaliseFrequencia(mensagem);
 }
